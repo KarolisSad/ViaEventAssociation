@@ -1,6 +1,6 @@
 ﻿namespace ClassLibrary1;
 
-public class ErrorCodes
+public class ErrorMessage
 {
     public class User
     {
