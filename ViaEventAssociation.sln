@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Docs", "Documentation\Docs\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViaEventAssociantion.Core.domain", "src\core\ViaEventAssociantion.Core.domain\ViaEventAssociantion.Core.domain.csproj", "{48199E70-5A40-47E9-9015-21E2D19B442B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{8220626F-566A-4637-9309-610AFDBC46F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{48199E70-5A40-47E9-9015-21E2D19B442B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48199E70-5A40-47E9-9015-21E2D19B442B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48199E70-5A40-47E9-9015-21E2D19B442B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8220626F-566A-4637-9309-610AFDBC46F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8220626F-566A-4637-9309-610AFDBC46F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8220626F-566A-4637-9309-610AFDBC46F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8220626F-566A-4637-9309-610AFDBC46F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
