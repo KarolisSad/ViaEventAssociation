@@ -1,4 +1,4 @@
-namespace ClassLibrary1;
+namespace ViaEventAssociation.Core.Tools.OperationResult;
 
 public static class ErrorMessage
 {

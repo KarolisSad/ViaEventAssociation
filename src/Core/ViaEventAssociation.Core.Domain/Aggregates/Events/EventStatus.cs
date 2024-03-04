@@ -4,7 +4,8 @@ public enum EventStatus
 {
     Ready = 0,
     Active,
-    Cancelled
+    Cancelled,
+    Draft
 }
 
 public enum ParticipationStatus
