@@ -25,7 +25,6 @@ public class UpdateDescription
     }
     
     [Test]
-    // [TestCase ("more_messages")]
     public void UpdateDescription_S2()
     {
         //Arrange
@@ -49,8 +48,7 @@ public class UpdateDescription
     {
         //Arrange
         EventId eventId = new EventId(1);
-        var description =
-            "";
+        var description = "";
         var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
         ViaEventAssociantion.Core.domain.Event createdEvent = ((Result<ViaEventAssociantion.Core.domain.Event>)result).Values;
         createdEvent.SetEventStatus(EventStatus.Ready);
@@ -85,7 +83,7 @@ public class UpdateDescription
         Assert.That(resultBase.ErrorMessages[0], Is.EqualTo("Description must be between 1 and 255 characters."));
     }
     
-        [Test]
+    [Test]
     public void UpdateDescription_F2()
     {
         //Arrange
@@ -104,7 +102,29 @@ public class UpdateDescription
         Assert.That(createdEvent.Description, Is.EqualTo(null));
         Assert.IsNotNull(resultBase.ErrorMessages);
         Assert.That(resultBase.ErrorMessages.Count, Is.EqualTo(1));
-        Assert.That(resultBase.ErrorMessages[0], Is.EqualTo("Description must be between 1 and 255 characters."));
+        Assert.That(resultBase.ErrorMessages[0], Is.EqualTo("Event is cancelled. Description cannot be set."));
+    }
+    
+    [Test]
+    public void UpdateDescription_F3()
+    {
+        //Arrange
+        EventId eventId = new EventId(1);
+        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
+        ViaEventAssociantion.Core.domain.Event createdEvent = ((Result<ViaEventAssociantion.Core.domain.Event>)result).Values;
+        var description =
+            "Great event :)";
+        createdEvent.SetEventStatus(EventStatus.Active);
+        
+        //Act
+        ResultBase resultBase = createdEvent.UpdateDescription(description);
+        
+        //Assert
+        Assert.IsTrue(!resultBase.IsSuccess);
+        Assert.That(createdEvent.Description, Is.EqualTo(null));
+        Assert.IsNotNull(resultBase.ErrorMessages);
+        Assert.That(resultBase.ErrorMessages.Count, Is.EqualTo(1));
+        Assert.That(resultBase.ErrorMessages[0], Is.EqualTo("Event is Active. Description cannot be set."));
     }
     
     
