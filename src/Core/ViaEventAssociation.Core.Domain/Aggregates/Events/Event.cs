@@ -44,8 +44,18 @@ public class Event
     
     public ResultBase UpdateTitle(string title)
     {
+      
         Title = title;
         ResultBase response = ValidateTitle(title);
+        if (Status == EventStatus.Active)
+        {
+         response.ErrorMessages.Add("Cannot update the title of an active event.");   
+        }
+        if (Status == EventStatus.Cancelled)
+        {
+            response.ErrorMessages.Add("Cannot update the title of a cancelled event.");   
+        }
+        
         if (response.IsSuccess)
         {
             SetEventStatus(EventStatus.Draft);
@@ -79,8 +89,11 @@ public class Event
         {
             errorMessages.Add("Title length has to be between 3 and 75 characters.");
         }
+        
+        
         return new ResultBase(errorMessages);
     }
+
     public ResultBase ValidateDescription(string description)
     {
         if (description.Length > 255)

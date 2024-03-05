@@ -1,32 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-<<<<<<< HEAD
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0a3d7ed2_002Dff9e_002D4323_002D9619_002D3da2471e9a31/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="OperationResultTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Common.OperationResult.OperationResultTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.CreateEvent.CreateEvent&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-=======
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0a3d7ed2_002Dff9e_002D4323_002D9619_002D3da2471e9a31/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="OperationResultTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Common.OperationResult.OperationResultTest&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.CreateEvent.CreateEvent&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateDescription.UpdateDescription.CreateEvent_S1&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateDescription.UpdateDescription.UpdateDescription_S2&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateDescription.UpdateDescription.UpdateDescription_S3&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateDescription.UpdateDescription.UpdateDescription_S1&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateDescription.UpdateDescription.UpdateDescription_F1&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
->>>>>>> 6a7773692d266d4cf109c824c9018f97b60fab25
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=61259022_002Da62c_002D49c9_002Dbdc8_002Db7d8f61a57e0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateTitle_F5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Solution /&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d54e24aa_002D8f68_002D4d7c_002D997c_002Df966c99a0472/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Tests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Common.OperationResult.OperationResultTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTitle.UpdateTitle.UpdateTitle_S1&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTitle.UpdateTitle.UpdateTitle_S2&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTitle.UpdateTitle.UpdateTitle_F1&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTitle.UpdateTitle.UpdateTitle_F2&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTitle.UpdateTitle.UpdateTitle_F3&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTitle.UpdateTitle.UpdateTitle_F4&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+</wpf:ResourceDictionary>
