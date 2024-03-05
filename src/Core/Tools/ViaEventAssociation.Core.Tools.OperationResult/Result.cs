@@ -5,7 +5,7 @@ namespace ViaEventAssociation.Core.Tools.OperationResult
     public class ResultBase
     {
         public List<string> ErrorMessages { get; set; }
-        public bool IsSuccess => ErrorMessages == null || ErrorMessages.Count == 0;
+        public bool IsSuccess => ErrorMessages == null || ErrorMessages.Count == 0; 
 
         public ResultBase(List<string> errorMessages)
         {

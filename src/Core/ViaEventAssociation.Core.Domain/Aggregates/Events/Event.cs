@@ -50,8 +50,13 @@ public class Event
     
     public ResultBase UpdateDescription(string description)
     {
-        Description = description;
-        return new ResultBase();
+        ResultBase response = ValidateDescription(description);
+        if (response.IsSuccess)
+        {
+            Description = description;
+            return new ResultBase();
+        }
+        return response;
     }
 
     public ResultBase SetIsPublic(bool isPublic)
@@ -59,6 +64,19 @@ public class Event
         IsPublic = isPublic;
         return new ResultBase();
     }
+
+    public ResultBase ValidateDescription(string description)
+    {
+        if (description.Length > 255)
+        {
+            return new ResultBase(new List<string> { "Description must be between 1 and 255 characters." });
+        }
+        else
+        {
+            return new ResultBase();
+        }
+    }
+    
     
     
     
