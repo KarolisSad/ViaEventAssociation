@@ -71,7 +71,7 @@ public class Event
         return new ResultBase();
     }
 
-<<<<<<< HEAD
+
     public ResultBase ValidateTitle(string title)
     {
         List<string> errorMessages = new List<string>();
@@ -81,7 +81,6 @@ public class Event
         }
         return new ResultBase(errorMessages);
     }
-=======
     public ResultBase ValidateDescription(string description)
     {
         if (description.Length > 255)
@@ -93,9 +92,4 @@ public class Event
             return new ResultBase();
         }
     }
-    
-    
-    
->>>>>>> 6a7773692d266d4cf109c824c9018f97b60fab25
-    
 }
