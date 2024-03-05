@@ -23,7 +23,6 @@
       <Folder Include="Features\Event\MakePublic\" />
       <Folder Include="Features\Event\Ready\" />
       <Folder Include="Features\Event\SetMaxGuests\" />
-      <Folder Include="Features\Event\UpdateDescription\" />
       <Folder Include="Features\Event\UpdateTimeRange\" />
       <Folder Include="Features\GuestTests\AcceptInvitation\" />
       <Folder Include="Features\GuestTests\CancelParticipation\" />

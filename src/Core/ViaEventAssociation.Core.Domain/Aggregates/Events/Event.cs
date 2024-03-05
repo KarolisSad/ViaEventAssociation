@@ -56,8 +56,13 @@ public class Event
     
     public ResultBase UpdateDescription(string description)
     {
-        Description = description;
-        return new ResultBase();
+        ResultBase response = ValidateDescription(description);
+        if (response.IsSuccess)
+        {
+            Description = description;
+            return new ResultBase();
+        }
+        return response;
     }
 
     public ResultBase SetIsPublic(bool isPublic)
@@ -66,6 +71,7 @@ public class Event
         return new ResultBase();
     }
 
+<<<<<<< HEAD
     public ResultBase ValidateTitle(string title)
     {
         List<string> errorMessages = new List<string>();
@@ -75,5 +81,21 @@ public class Event
         }
         return new ResultBase(errorMessages);
     }
+=======
+    public ResultBase ValidateDescription(string description)
+    {
+        if (description.Length > 255)
+        {
+            return new ResultBase(new List<string> { "Description must be between 1 and 255 characters." });
+        }
+        else
+        {
+            return new ResultBase();
+        }
+    }
+    
+    
+    
+>>>>>>> 6a7773692d266d4cf109c824c9018f97b60fab25
     
 }
