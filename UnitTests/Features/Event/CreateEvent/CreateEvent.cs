@@ -3,7 +3,7 @@ using ViaEventAssociantion.Core.domain.EventProperties;
 using ViaEventAssociation.Core.Tools.OperationResult;
 
 namespace UnitTests.Features.Event.CreateEvent;
-
+[TestFixture]
 public class CreateEvent
 {
     [SetUp]

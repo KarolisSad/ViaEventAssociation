@@ -45,7 +45,13 @@ public class Event
     public ResultBase UpdateTitle(string title)
     {
         Title = title;
-        return new ResultBase();
+        ResultBase response = ValidateTitle(title);
+        if (response.IsSuccess)
+        {
+            SetEventStatus(EventStatus.Draft);
+            return new ResultBase();
+        }
+        return response;
     }
     
     public ResultBase UpdateDescription(string description)
@@ -59,7 +65,15 @@ public class Event
         IsPublic = isPublic;
         return new ResultBase();
     }
-    
-    
+
+    public ResultBase ValidateTitle(string title)
+    {
+        List<string> errorMessages = new List<string>();
+        if (title.Length < 3 || title.Length > 75)
+        {
+            errorMessages.Add("Title length has to be between 3 and 75 characters.");
+        }
+        return new ResultBase(errorMessages);
+    }
     
 }

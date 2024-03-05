@@ -25,7 +25,6 @@
       <Folder Include="Features\Event\SetMaxGuests\" />
       <Folder Include="Features\Event\UpdateDescription\" />
       <Folder Include="Features\Event\UpdateTimeRange\" />
-      <Folder Include="Features\Event\UpdateTitle\" />
       <Folder Include="Features\GuestTests\AcceptInvitation\" />
       <Folder Include="Features\GuestTests\CancelParticipation\" />
       <Folder Include="Features\GuestTests\DeclineInvitation\" />
