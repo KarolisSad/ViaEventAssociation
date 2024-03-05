@@ -143,6 +143,7 @@ public class Event
         return new ResultBase();
     }
     
+
     public ResultBase ValidateTitle(string title)
     {
         List<string> errorMessages = new List<string>();
@@ -152,6 +153,7 @@ public class Event
         }
         return new ResultBase(errorMessages);
     }
+
     
     public ResultBase ValidateMakeEventPublic()
     {
@@ -206,7 +208,6 @@ public class Event
     }
 
 
-
     public ResultBase ValidateDescription(string description)
     {
         if (Status == EventStatus.Cancelled)
@@ -228,6 +229,5 @@ public class Event
             return new ResultBase();
         }
     }
-    
-    
+
 }
