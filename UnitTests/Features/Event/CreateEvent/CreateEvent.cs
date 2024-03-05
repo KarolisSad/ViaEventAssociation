@@ -14,7 +14,7 @@ public class CreateEvent
 
 
     [Test]
-    public async Task CreateEvent_S1()
+    public Task CreateEvent_S1()
     {
         //Arrange
         EventId eventId = new EventId(1);
@@ -27,13 +27,13 @@ public class CreateEvent
         
         //Assert
         Assert.IsTrue(result.IsSuccess);
-        Assert.AreEqual(createdEvent.MaximumNumberOfGuests, 5);
-        Assert.AreEqual(createdEvent.Status, EventStatus.Draft);
-        
+        Assert.That(createdEvent.MaximumNumberOfGuests, Is.EqualTo(5));
+        Assert.That(createdEvent.Status, Is.EqualTo(EventStatus.Draft));
+        return Task.CompletedTask;
     }
     
     [Test]
-    public async Task CreateEvent_S2()
+    public Task CreateEvent_S2()
     {
         //Arrange
         EventId eventId = new EventId(1);
@@ -45,11 +45,12 @@ public class CreateEvent
         
         //Assert
         Assert.IsTrue(result.IsSuccess);
-        Assert.AreEqual(createdEvent.Title, "");
+        Assert.That(createdEvent.Title, Is.EqualTo(""));
+        return Task.CompletedTask;
     }
     
     [Test]
-    public async Task CreateEvent_S3()
+    public Task CreateEvent_S3()
     {
         //Arrange
         EventId eventId = new EventId(1);
@@ -61,11 +62,12 @@ public class CreateEvent
         
         //Assert
         Assert.IsTrue(result.IsSuccess);
-        Assert.AreEqual(createdEvent.Description, "");
+        Assert.That(createdEvent.Description, Is.EqualTo(""));
+        return Task.CompletedTask;
     }
     
     [Test]
-    public async Task CreateEvent_S4()
+    public Task CreateEvent_S4()
     {
         //Arrange
         EventId eventId = new EventId(1);
@@ -77,7 +79,8 @@ public class CreateEvent
         
         //Assert
         Assert.IsTrue(result.IsSuccess);
-        Assert.AreEqual(createdEvent.IsPublic, false);
+        Assert.That(createdEvent.IsPublic, Is.EqualTo(false));
+        return Task.CompletedTask;
     }
     
 }
