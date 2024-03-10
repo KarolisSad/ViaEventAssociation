@@ -23,8 +23,11 @@ public class Ready
         validCreatedEvent.MakeEventPrivate();
         validCreatedEvent.UpdateTitle("Great event");
         validCreatedEvent.UpdateDescription("Amazingly great event!");
-        validCreatedEvent.StartTime = (new DateTime(2024, 06, 06, 12, 21, 12));
-        validCreatedEvent.EndTime = (new DateTime(2024, 06, 07, 12, 21, 12));
+        DateTime currentTime = DateTime.Now;
+        DateTime startTime = currentTime.AddHours(-1);
+        DateTime endTime = currentTime.AddHours(2);
+        validCreatedEvent.StartTime = startTime;
+        validCreatedEvent.EndTime = endTime;
         validCreatedEvent.SetMaxNrOfGuests(19);
     }
 
@@ -36,7 +39,7 @@ public class Ready
 
         //Assert
         Assert.IsTrue(resultBase.IsSuccess);
-        Assert.That(createdEvent.Status, Is.EqualTo(EventStatus.Ready));
+        Assert.That(validCreatedEvent.Status, Is.EqualTo(EventStatus.Ready));
         Assert.That(resultBase.ErrorMessages.Count, Is.EqualTo(0));
     }
 
@@ -51,8 +54,12 @@ public class Ready
 
         //Assert
         Assert.IsTrue(!resultBase.IsSuccess);
-        // Assert.That(resultBase.ErrorMessages.Count, Is.EqualTo(4));
-        Assert.That(resultBase.ErrorMessages[0], Is.EqualTo("Title must be set."));
+        Assert.That(
+            string.Join(", ", resultBase.ErrorMessages),
+            Is.EqualTo(
+                "Title must be set., Description must be set., Start date time must be set., End date time must be set."
+            )
+        );
     }
 
     [Test]
@@ -76,7 +83,22 @@ public class Ready
     [Test]
     public void UpdateDescription_F3()
     {
-        // Todo
+        //Arrange
+        DateTime currentTime = DateTime.Now;
+        DateTime startTime = currentTime.AddHours(1);
+        DateTime endTime = currentTime.AddHours(3);
+        validCreatedEvent.UpdateTimeRange(startTime, endTime);
+
+        //Act
+        ResultBase resultBase = validCreatedEvent.MakeEventReady();
+
+        //Assert
+        Assert.IsTrue(!resultBase.IsSuccess);
+        Assert.That(resultBase.ErrorMessages.Count, Is.EqualTo(1));
+        Assert.That(
+            resultBase.ErrorMessages[0],
+            Is.EqualTo("An event in the past cannot be made ready.")
+        );
     }
 
     [Test]

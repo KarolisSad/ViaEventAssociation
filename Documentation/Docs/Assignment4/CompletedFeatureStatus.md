@@ -17,13 +17,13 @@
   - [x] F5
   - [x] F6 
   
-- [ ] UC3 - Update Description - Karolis
-  - [ ] S1
-  - [ ] S2
-  - [ ] S3
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
+- [x] UC3 - Update Description - Karolis
+  - [x] S1
+  - [x] S2
+  - [x] S3
+  - [x] F1
+  - [x] F2
+  - [x] F3
 
 - [x] UC4 - Update Times - Robert
   - [x] S1
@@ -43,33 +43,33 @@
   - [x] F10
   - [x] F11
   
-- [ ] UC5 - Make Event public - Karolis
-  - [ ] S1
-  - [ ] F1
+- [x] UC5 - Make Event public - Karolis
+  - [x] S1
+  - [x] F1
   
-- [ ] UC6 - Make Event private - Karolis
-  - [ ] S1
-  - [ ] S2
-  - [ ] F1
-  - [ ] F2
+- [x] UC6 - Make Event private - Karolis
+  - [x] S1
+  - [x] S2
+  - [x] F1
+  - [x] F2
   
 - [ ] UC7 - Update Max Nr Of Guests - Karolis
-  - [ ] S1
-  - [ ] S2
-  - [ ] S3
-  - [ ] F1
-  - [ ] F2
+  - [x] S1
+  - [x] S2
+  - [x] S3
+  - [x] F1
+  - [x] F2
   - [ ] F3
-  - [ ] F4
-  - [ ] F5
+  - [x] F4
+  - [X] F5
   
-- [ ] UC8 - Set the EventStatus to Ready - Karolis
-  - [ ] S1
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
-  - [ ] F4
-  - [ ] F5
+- [x] UC8 - Set the EventStatus to Ready - Karolis
+  - [x] S1
+  - [x] F1
+  - [x] F2
+  - [x] F3
+  - [x] F4
+  - [x] F5
   
 - [x] UC9 - Activate Event - Robert
   - [x] S1

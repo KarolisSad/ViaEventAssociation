@@ -197,6 +197,12 @@ public class Event
                 new List<string> { "The maximum number of guests cannot be less than 5." }
             );
         }
+        if (maxNumberOfGuests > 50)
+        {
+            return new ResultBase(
+                new List<string> { "The maximum number of guests cannot be more than 50." }
+            );
+        }
         if (maxNumberOfGuests < MaximumNumberOfGuests)
         {
             return new ResultBase(
@@ -259,6 +265,15 @@ public class Event
         {
             return new ResultBase(new List<string> { "A cancelled event cannot be readied." });
         }
+        if (StartTime > DateTime.Now)
+        {
+            return new ResultBase(
+                new List<string> { "An event in the past cannot be made ready." }
+            );
+        }
+        Console.WriteLine(StartTime);
+        Console.WriteLine(DateTime.Now);
+
         if (string.IsNullOrEmpty(Title))
         {
             errorMessages.Add("Title must be set.");
