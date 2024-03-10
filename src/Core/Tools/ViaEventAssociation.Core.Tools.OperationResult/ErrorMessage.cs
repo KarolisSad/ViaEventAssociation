@@ -1,8 +1,8 @@
-﻿namespace ClassLibrary1;
+namespace ViaEventAssociation.Core.Tools.OperationResult;
 
-public class ErrorMessage
+public static class ErrorMessage
 {
-    public class User
+    public static class User
     {
         public const string InvalidEmailAddress = "USR_001";
         public const string InvalidEmailAddressMessage = "Email address is invalid.";
@@ -14,7 +14,7 @@ public class ErrorMessage
         public const string InvalidUsernameMessage = "Username is invalid.";
     }
 
-    public class Event
+    public static class Event
     {
         public const string InvalidDescription = "EVT_001";
         public const string InvalidDescriptionMessage = "The entered description is invalid.";
@@ -32,7 +32,7 @@ public class ErrorMessage
         public const string MaximumNumberOfGuestsReachedMessage = "Maximum number of guests has been reached.";
     }
 
-    public class Location
+    public static class Location
     {
         public const string InvalidType = "LOC_001";
         public const string InvalidTypeMessage = "The entered type is invalid.";
