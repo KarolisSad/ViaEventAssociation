@@ -5,10 +5,10 @@ using ViaEventAssociantion.Core.domain.GuestProperties;
 using ViaEventAssociantion.Core.domain.UserProperties;
 using ViaEventAssociation.Core.Tools.OperationResult;
 
-namespace UnitTests.Features.GuestTests.Participate;
+namespace UnitTests.Features.GuestTests.DeclineInvitation;
 
 [TestFixture]
-public class Participate
+public class DeclineInvitation
 {
     private ViaEventAssociantion.Core.domain.Event createdEvent;
     private Guest guest;
@@ -32,130 +32,114 @@ public class Participate
     }
 
     [Test]
-    public Task Participate_S1()
+    public Task DeclineInvitation_S1()
     {
         // Arrange
         createdEvent.Status = EventStatus.Active;
         createdEvent.IsPublic = true;
+        createdEvent.InviteGuest(guest);
 
         //Act
-        ResultBase response = createdEvent.Participate(guest);
+        ResultBase response = createdEvent.DeclineInvitation(guest);
 
         //Assert
         Assert.IsTrue(response.IsSuccess);
         Assert.IsEmpty(response.ErrorMessages);
-        Assert.That(createdEvent.Requests.First().Guest.Username, Is.EqualTo(guest.Username));
-
-        return Task.CompletedTask;
-    }
-
-    [Test]
-    [TestCase(EventStatus.Draft)]
-    [TestCase(EventStatus.Cancelled)]
-    [TestCase(EventStatus.Ready)]
-    public Task Participate_F1(EventStatus eventStatus)
-    {
-        // Arrange
-        createdEvent.Status = eventStatus;
-        createdEvent.IsPublic = true;
-
-        //Act
-        ResultBase response = createdEvent.Participate(guest);
-
-        //Assert
-        Assert.IsFalse(response.IsSuccess);
-        Assert.IsNotEmpty(response.ErrorMessages);
-        Assert.IsTrue(
-            response.ErrorMessages.Any(message =>
-                message.Contains("Only active events can be joined.")
-            )
+        Assert.That(
+            createdEvent.Invitations.First().Status,
+            Is.EqualTo(ParticipationStatus.Declined)
         );
 
         return Task.CompletedTask;
     }
 
     [Test]
-    public Task Participate_F2()
-    {
-        // Arrange
-        createdEvent.Status = EventStatus.Active;
-        createdEvent.MaximumNumberOfGuests = 0;
-
-        //Act
-        ResultBase response = createdEvent.Participate(guest);
-
-        //Assert
-        Assert.IsFalse(response.IsSuccess);
-        Assert.IsNotEmpty(response.ErrorMessages);
-        Assert.IsTrue(
-            response.ErrorMessages.Any(message => message.Contains("The event is full."))
-        );
-
-        return Task.CompletedTask;
-    }
-
-    [Test]
-    public Task Participate_F3()
-    {
-        // Arrange
-        createdEvent.Status = EventStatus.Active;
-        createdEvent.StartTime = new DateTime(2023, 8, 8, 8, 8, 8, 8);
-
-        //Act
-        ResultBase response = createdEvent.Participate(guest);
-
-        //Assert
-        Assert.IsFalse(response.IsSuccess);
-        Assert.IsNotEmpty(response.ErrorMessages);
-        Assert.IsTrue(
-            response.ErrorMessages.Any(message =>
-                message.Contains("Only future events can be participated.")
-            )
-        );
-
-        return Task.CompletedTask;
-    }
-
-    [Test]
-    public Task Participate_F4()
-    {
-        // Arrange
-        createdEvent.Status = EventStatus.Active;
-        createdEvent.IsPublic = false;
-
-        //Act
-        ResultBase response = createdEvent.Participate(guest);
-
-        //Assert
-        Assert.IsFalse(response.IsSuccess);
-        Assert.IsNotEmpty(response.ErrorMessages);
-        Assert.IsTrue(
-            response.ErrorMessages.Any(message =>
-                message.Contains("Only public events can be joined.")
-            )
-        );
-
-        return Task.CompletedTask;
-    }
-
-    [Test]
-    public Task Participate_F5()
+    public Task DeclineInvitation_S2()
     {
         // Arrange
         createdEvent.Status = EventStatus.Active;
         createdEvent.IsPublic = true;
-        createdEvent.Participate(guest);
-        createdEvent.Requests.First().Status = ParticipationStatus.Accepted;
+        createdEvent.InviteGuest(guest);
+        createdEvent.Invitations.First().Status = ParticipationStatus.Accepted;
 
         //Act
-        ResultBase response = createdEvent.Participate(guest);
+        ResultBase response = createdEvent.DeclineInvitation(guest);
+
+        //Assert
+        Assert.IsTrue(response.IsSuccess);
+        Assert.IsEmpty(response.ErrorMessages);
+        Assert.That(
+            createdEvent.Invitations.First().Status,
+            Is.EqualTo(ParticipationStatus.Declined)
+        );
+
+        return Task.CompletedTask;
+    }
+
+    [Test]
+    public Task DeclineInvitation_F1()
+    {
+        // Arrange
+        createdEvent.Status = EventStatus.Active;
+        createdEvent.IsPublic = true;
+
+        //Act
+        ResultBase response = createdEvent.DeclineInvitation(guest);
+
+        //Assert
+        Assert.IsFalse(response.IsSuccess);
+        Assert.IsNotEmpty(response.ErrorMessages);
+        Assert.IsTrue(
+            response.ErrorMessages.Any(message => message.Contains("Invitation not found."))
+        );
+
+        return Task.CompletedTask;
+    }
+
+    [Test]
+    public Task DeclineInvitation_F2()
+    {
+        // Arrange
+        createdEvent.Status = EventStatus.Active;
+        createdEvent.IsPublic = true;
+        createdEvent.InviteGuest(guest);
+
+        createdEvent.Status = EventStatus.Cancelled;
+
+        //Act
+        ResultBase response = createdEvent.DeclineInvitation(guest);
 
         //Assert
         Assert.IsFalse(response.IsSuccess);
         Assert.IsNotEmpty(response.ErrorMessages);
         Assert.IsTrue(
             response.ErrorMessages.Any(message =>
-                message.Contains("Guest has already joined the event.")
+                message.Contains("Cannot decline an invitation for a cancelled event.")
+            )
+        );
+
+        return Task.CompletedTask;
+    }
+
+    [Test]
+    public Task DeclineInvitation_F3()
+    {
+        // Arrange
+        createdEvent.Status = EventStatus.Active;
+        createdEvent.IsPublic = true;
+        createdEvent.InviteGuest(guest);
+
+        createdEvent.Status = EventStatus.Ready;
+
+        //Act
+        ResultBase response = createdEvent.DeclineInvitation(guest);
+
+        //Assert
+        Assert.IsFalse(response.IsSuccess);
+        Assert.IsNotEmpty(response.ErrorMessages);
+        Assert.IsTrue(
+            response.ErrorMessages.Any(message =>
+                message.Contains("Cannot decline an invitation for a ready event.")
             )
         );
 

@@ -88,13 +88,13 @@
   - [ ] F6
   - [ ] F7
   
-- [ ] UC11 - Guest Participates in Public Event - Robert
-  - [ ] S1
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
-  - [ ] F4
-  - [ ] F5
+- [x] UC11 - Guest Participates in Public Event - Robert
+  - [x] S1
+  - [x] F1
+  - [x] F2
+  - [x] F3
+  - [x] F4
+  - [x] F5
   
 - [ ] UC12 - Guest Cancels Event Participation - Karolis
 
@@ -102,10 +102,10 @@
   - [ ] S2
   - [ ] F1
 
-- [ ] UC13 - Guest is invited to Event - Robert
-  - [ ] S1
-  - [ ] F1
-  - [ ] F2
+- [x] UC13 - Guest is invited to Event - Robert
+  - [x] S1
+  - [x] F1
+  - [x] F2
 
 - [ ] UC14 - Guest accepts Invitation - Karolis
   - [ ] S1
@@ -114,9 +114,9 @@
   - [ ] F3
   - [ ] F4
 
-- [ ] UC15 - Guest declines Invitation - Robert
-  - [ ] S1
-  - [ ] S2
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
+- [x] UC15 - Guest declines Invitation - Robert
+  - [x] S1
+  - [x] S2
+  - [x] F1
+  - [x] F2
+  - [x] F3
