@@ -19,14 +19,18 @@ namespace ViaEventAssociantion.Core.domain
 
             if (!ValidateName(firstName) || !ValidateName(lastName))
             {
-                return new ResultBase(new List<string> { "First name and last name must be between 2 and 25 characters and consist only of letters." });
+                return new ResultBase(
+                    new List<string>
+                    {
+                        "First name and last name must be between 2 and 25 characters and consist only of letters."
+                    }
+                );
             }
 
             firstName = char.ToUpper(firstName[0]) + firstName.Substring(1).ToLower();
             lastName = char.ToUpper(lastName[0]) + lastName.Substring(1).ToLower();
 
-            
-            // Create User 
+            // Create User
             // Not implented yet
 
             return new ResultBase();
@@ -47,7 +51,10 @@ namespace ViaEventAssociantion.Core.domain
 
         private bool ValidateName(string name)
         {
-            return !string.IsNullOrWhiteSpace(name) && name.Length >= 2 && name.Length <= 25 && Regex.IsMatch(name, @"^[a-zA-Z]+$");
+            return !string.IsNullOrWhiteSpace(name)
+                && name.Length >= 2
+                && name.Length <= 25
+                && Regex.IsMatch(name, @"^[a-zA-Z]+$");
         }
     }
 }

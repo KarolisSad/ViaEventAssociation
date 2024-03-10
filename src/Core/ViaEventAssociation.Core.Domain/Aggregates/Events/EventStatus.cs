@@ -2,10 +2,10 @@
 
 public enum EventStatus
 {
-    Ready = 0,
+    Draft = 0,
     Active,
     Cancelled,
-    Draft
+    Ready
 }
 
 public enum ParticipationStatus

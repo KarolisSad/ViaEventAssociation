@@ -7,15 +7,15 @@
   - [x] S3
   - [x] S4 
   
-- [ ] UC2 - Update Title - Robert
+- [x] UC2 - Update Title - Robert
   - [x] S1
   - [x] S2
   - [x] F1
   - [x] F2
   - [x] F3
   - [x] F4
-  - [ ] F5
-  - [ ] F6 
+  - [x] F5
+  - [x] F6 
   
 - [ ] UC3 - Update Description - Karolis
   - [ ] S1
@@ -24,24 +24,24 @@
   - [ ] F1
   - [ ] F2
   - [ ] F3
-  
-- [ ] UC4 - Update Times - Robert
-  - [ ] S1
-  - [ ] S2
-  - [ ] S3
-  - [ ] S4
-  - [ ] S5
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
-  - [ ] F4
-  - [ ] F5
-  - [ ] F6
-  - [ ] F7
-  - [ ] F8
-  - [ ] F9
-  - [ ] F10
-  - [ ] F11
+
+- [x] UC4 - Update Times - Robert
+  - [x] S1
+  - [x] S2
+  - [x] S3
+  - [x] S4
+  - [x] S5
+  - [x] F1
+  - [x] F2
+  - [x] F3
+  - [x] F4
+  - [x] F5
+  - [x] F6
+  - [x] F7
+  - [x] F8
+  - [x] F9
+  - [x] F10
+  - [x] F11
   
 - [ ] UC5 - Make Event public - Karolis
   - [ ] S1
@@ -71,12 +71,12 @@
   - [ ] F4
   - [ ] F5
   
-- [ ] UC9 - Activate Event - Robert
-  - [ ] S1
-  - [ ] S2
-  - [ ] S3
-  - [ ] F1
-  - [ ] F2
+- [x] UC9 - Activate Event - Robert
+  - [x] S1
+  - [x] S2
+  - [x] S3
+  - [x] F1
+  - [x] F2
 
 - [ ] UC10 - Register a Guest Account - Karolis
   - [ ] S1
@@ -88,7 +88,7 @@
   - [ ] F6
   - [ ] F7
   
-- [ ] UC11 - Guest Participates in Public Event -Robert
+- [ ] UC11 - Guest Participates in Public Event - Robert
   - [ ] S1
   - [ ] F1
   - [ ] F2
