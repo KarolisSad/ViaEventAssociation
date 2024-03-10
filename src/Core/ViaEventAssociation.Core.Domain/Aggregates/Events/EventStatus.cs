@@ -10,7 +10,7 @@ public enum EventStatus
 
 public enum ParticipationStatus
 {
-    Accepted = 0,
-    Denied,
-    Pending
+    Pending = 0,
+    Declined,
+    Accepted
 }

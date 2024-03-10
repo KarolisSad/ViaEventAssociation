@@ -2,5 +2,11 @@
 
 public class InvitationId
 {
+    private static int counter = 0;
     public int Value;
+
+    public InvitationId()
+    {
+        Value = ++counter;
+    }
 }
