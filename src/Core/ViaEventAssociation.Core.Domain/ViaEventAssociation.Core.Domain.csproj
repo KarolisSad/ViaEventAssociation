@@ -9,7 +9,6 @@
     <ItemGroup>
       <Folder Include="Aggregates\Creators\" />
       <Folder Include="Common\Bases\" />
-      <Folder Include="Common\Values\" />
       <Folder Include="Services\" />
     </ItemGroup>
 

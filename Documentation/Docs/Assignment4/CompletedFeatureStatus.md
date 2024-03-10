@@ -79,14 +79,14 @@
   - [x] F2
 
 - [ ] UC10 - Register a Guest Account - Karolis
-  - [ ] S1
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
-  - [ ] F4
+  - [x] S1
+  - [x] F1
+  - [x] F2
+  - [x] F3
+  - [x] F4
   - [ ] F5
-  - [ ] F6
-  - [ ] F7
+  - [x] F6
+  - [x] F7
   
 - [x] UC11 - Guest Participates in Public Event - Robert
   - [x] S1

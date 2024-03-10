@@ -29,6 +29,9 @@
 
       <Folder Include="Features\GuestTests\AcceptInvitation\" />
       <Folder Include="Features\GuestTests\CancelParticipation\" />
+      <Folder Include="Features\GuestTests\DeclineInvitation\" />
+      <Folder Include="Features\GuestTests\InviteGuests\" />
+
       <Folder Include="Features\GuestTests\Register\" />
     </ItemGroup>
 
