@@ -172,6 +172,8 @@ public class Event
             && ValidateTitle(Title).IsSuccess
             && ValidateDescription(Description).IsSuccess
             && ValidateTime(StartTime, EndTime).IsSuccess
+            && ValidateSetMaxNrOfGuests(MaximumNumberOfGuests).IsSuccess
+            && ValidateMakeEventPublic().IsSuccess
         )
         {
             Status = EventStatus.Active;
