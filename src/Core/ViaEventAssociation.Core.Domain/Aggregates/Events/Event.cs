@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography;
 using ViaEventAssociantion.Core.domain.Enums;
 using ViaEventAssociantion.Core.domain.EventProperties;
+using ViaEventAssociantion.Core.domain.RequestProperties;
 using ViaEventAssociantion.Core.domain.UserProperties;
 using ViaEventAssociation.Core.Domain.Aggregates.Locations;
 using ViaEventAssociation.Core.Tools.OperationResult;
@@ -17,8 +18,8 @@ public class Event
     public bool IsPublic { get; set; }
     public int MaximumNumberOfGuests { get; set; }
     public EventStatus Status { get; set; }
-    public ICollection<Request> Requests { get; set; }
-    public ICollection<Invitation> Invitations { get; set; }
+    public ICollection<Request> Requests { get; set; } = new HashSet<Request>();
+    public ICollection<Invitation> Invitations { get; set; } = new HashSet<Invitation>();
 
     private Event(EventId eventId)
     {
@@ -31,6 +32,117 @@ public class Event
     {
         Event value = new Event(eventId);
         return new Result<Event>(value);
+    }
+
+    public ResultBase InviteGuest(Guest guest)
+    {
+        List<string> errorMessages = new List<string>();
+
+        var newInvitation = new Invitation(guest);
+
+        if (Status != EventStatus.Active && Status != EventStatus.Ready)
+        {
+            errorMessages.Add("Event must be ready or active.");
+        }
+        var acceptedInvitations = Invitations.Count(invitation =>
+            invitation.Status == ParticipationStatus.Accepted
+        );
+
+        var acceptedRequests = Requests.Count(request =>
+            request.Status == ParticipationStatus.Accepted
+        );
+
+        if (acceptedRequests + acceptedInvitations >= MaximumNumberOfGuests)
+        {
+            errorMessages.Add("The event is full.");
+        }
+
+        if (errorMessages.Count == 0)
+        {
+            Invitations.Add(newInvitation);
+        }
+
+        return new ResultBase(errorMessages);
+    }
+
+    public ResultBase DeclineInvitation(Guest guest)
+    {
+        List<string> errorMessages = new List<string>();
+        var invitation = Invitations.FirstOrDefault(invitation => invitation.Guest.Equals(guest));
+
+        if (EventStatus.Cancelled == Status)
+        {
+            errorMessages.Add("Cannot decline an invitation for a cancelled event.");
+        }
+
+        if (EventStatus.Ready == Status)
+        {
+            errorMessages.Add("Cannot decline an invitation for a ready event.");
+        }
+
+        if (invitation == null)
+        {
+            errorMessages.Add("Invitation not found.");
+            return new ResultBase(errorMessages);
+        }
+        if (errorMessages.Count == 0)
+        {
+            invitation.Status = ParticipationStatus.Declined;
+        }
+
+        return new ResultBase(errorMessages);
+    }
+
+    public ResultBase Participate(Guest guest)
+    {
+        List<string> errorMessages = new List<string>();
+        var newRequest = new Request(guest);
+        if (Status != EventStatus.Active)
+        {
+            errorMessages.Add("Only active events can be joined.");
+        }
+
+        var guestAcceptedInvitations = Invitations.Count(invitation =>
+            invitation.Guest.Equals(guest) && invitation.Status == ParticipationStatus.Accepted
+        );
+
+        var guestAcceptedRequests = Requests.Count(request =>
+            request.Guest.Equals(guest) && request.Status == ParticipationStatus.Accepted
+        );
+        if (guestAcceptedInvitations + guestAcceptedRequests > 0)
+        {
+            errorMessages.Add("Guest has already joined the event.");
+        }
+
+        if (IsPublic == false)
+        {
+            errorMessages.Add("Only public events can be joined.");
+        }
+
+        if (StartTime < DateTime.Now)
+        {
+            errorMessages.Add("Only future events can be participated.");
+        }
+
+        var acceptedInvitations = Invitations.Count(invitation =>
+            invitation.Status == ParticipationStatus.Accepted
+        );
+
+        var acceptedRequests = Requests.Count(request =>
+            request.Status == ParticipationStatus.Accepted
+        );
+
+        if (acceptedRequests + acceptedInvitations >= MaximumNumberOfGuests)
+        {
+            errorMessages.Add("The event is full.");
+        }
+
+        if (errorMessages.Count == 0)
+        {
+            Requests.Add(newRequest);
+        }
+
+        return new ResultBase(errorMessages);
     }
 
     public ResultBase Activate()
@@ -60,6 +172,8 @@ public class Event
             && ValidateTitle(Title).IsSuccess
             && ValidateDescription(Description).IsSuccess
             && ValidateTime(StartTime, EndTime).IsSuccess
+            && ValidateSetMaxNrOfGuests(MaximumNumberOfGuests).IsSuccess
+            && ValidateMakeEventPublic().IsSuccess
         )
         {
             Status = EventStatus.Active;

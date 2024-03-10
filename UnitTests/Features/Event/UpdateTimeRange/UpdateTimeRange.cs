@@ -7,6 +7,17 @@ namespace UnitTests.Features.Event.UpdateTimeRange;
 [TestFixture]
 public class UpdateTimeRange
 {
+    private ViaEventAssociantion.Core.domain.Event createdEvent;
+    private ResultBase result;
+
+    [SetUp]
+    public void Setup()
+    {
+        var eventId = new EventId(1);
+        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
+        createdEvent = ((Result<ViaEventAssociantion.Core.domain.Event>)result).Values;
+    }
+
     [Test]
     [TestCase(2023, 8, 25, 19, 0, 0, 2023, 8, 25, 23, 59, 0)]
     [TestCase(2023, 8, 25, 12, 0, 0, 2023, 8, 25, 16, 30, 0)]
@@ -29,11 +40,7 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
+
 
         var startTime = new DateTime(
             startYear,
@@ -74,12 +81,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
-
         var startTime = new DateTime(
             startYear,
             startMonth,
@@ -119,11 +120,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -166,11 +162,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -211,11 +202,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -257,11 +243,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -305,11 +286,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -352,12 +328,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
-
         var startTime = new DateTime(
             startYear,
             startMonth,
@@ -400,11 +370,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -450,11 +415,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -501,12 +461,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
-
         var startTime = new DateTime(
             startYear,
             startMonth,
@@ -549,11 +503,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -598,11 +547,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -650,11 +594,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,
@@ -700,11 +639,6 @@ public class UpdateTimeRange
     // )
     // {
     //     // Arrange
-    //     var eventId = new EventId(1);
-    //     var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-    //     ViaEventAssociantion.Core.domain.Event createdEvent = (
-    //         (Result<ViaEventAssociantion.Core.domain.Event>)result
-    //     ).Values;
     //
     //     var startTime = new DateTime(
     //         startYear,
@@ -750,11 +684,6 @@ public class UpdateTimeRange
     )
     {
         // Arrange
-        var eventId = new EventId(1);
-        var result = ViaEventAssociantion.Core.domain.Event.Create(eventId);
-        ViaEventAssociantion.Core.domain.Event createdEvent = (
-            (Result<ViaEventAssociantion.Core.domain.Event>)result
-        ).Values;
 
         var startTime = new DateTime(
             startYear,

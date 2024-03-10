@@ -17,6 +17,13 @@ namespace ViaEventAssociantion.Core.domain
         public string Password;
 
         private Guest(Mail viaMail, FirstName firstName, LastName lastName, string password)
+        public Guest(UserId id, Username username, Password password, UserMail mail)
+            : base(id, username, password)
+        {
+            Email = mail;
+        }
+
+        public ResultBase Register(string email, string firstName, string lastName)
         {
             Email = viaMail;
             UserFirstName = firstName;
