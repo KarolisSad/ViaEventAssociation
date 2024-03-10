@@ -2,7 +2,7 @@
 
 namespace ViaEventAssociantion.Core.domain;
 
-public class Guest :User
+public class Guest : User
 {
     public UserMail email;
 }

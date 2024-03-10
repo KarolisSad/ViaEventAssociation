@@ -7,5 +7,4 @@ public class Request
 {
     public RequestId Id { get; set; }
     public ParticipationStatus Status { get; set; }
-    
 }

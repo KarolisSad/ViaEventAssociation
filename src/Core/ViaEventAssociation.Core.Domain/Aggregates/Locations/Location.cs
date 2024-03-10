@@ -17,6 +17,4 @@ public class Location
         // return new Result<string>(new List<string> { "randomErrorMessage" });
         return new ResultBase();
     }
-    
-    
 }

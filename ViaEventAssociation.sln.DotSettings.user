@@ -1,5 +1,21 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=61259022_002Da62c_002D49c9_002Dbdc8_002Db7d8f61a57e0/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="UpdateTitle_F5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=3a45b560_002D90e5_002D4921_002Da5a7_002D0c2e6203579d/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;Namespace&gt;UnitTests.Features.Event.UpdateTimeRange&lt;/Namespace&gt;&#xD;
+      &lt;Project Location="C:\Users\barta\RiderProjects\ViaEventAssociation\UnitTests" Presentation="&amp;lt;Tests&amp;gt;\&amp;lt;UnitTests&amp;gt;" /&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.Activate.Activate.Activate_F1&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-</wpf:ResourceDictionary>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=462930f3_002D663a_002D447f_002D837a_002D77961751caff/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Activate_F1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.Activate.Activate.Activate_F1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.UpdateTimeRange.UpdateTimeRange&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.Activate.Activate.Activate_F2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.Activate.Activate.Activate_S1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::56DDEA83-1D61-40A9-8A51-DC7AD690CB89::net8.0::UnitTests.Features.Event.Activate.Activate&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
