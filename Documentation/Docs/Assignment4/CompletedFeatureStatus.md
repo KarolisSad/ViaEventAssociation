@@ -82,11 +82,11 @@
   - [x] S1*
   - [x] F1
   - [x] F2
-  - [ ] F3
-  - [ ] F4
-  - [ ] F5
-  - [ ] F6
-  - [ ] F7
+  - [x] F3*
+  - [x] F4*
+  - [x] F5*
+  - [x] F6
+  - [x] F7
   
 - [x] UC11 - Guest Participates in Public Event - Robert
   - [x] S1

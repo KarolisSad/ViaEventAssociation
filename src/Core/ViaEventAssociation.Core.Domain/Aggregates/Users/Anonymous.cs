@@ -30,3 +30,4 @@ public class Anonymous
         return new Result<Guest>(guest);
     }
 }
+

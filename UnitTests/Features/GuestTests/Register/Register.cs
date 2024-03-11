@@ -69,12 +69,43 @@ public class Register
     public void Register_F3()
     {
         // To add firstname across system
+      
+        //Arrange
+        //string firstName = ".";
+        //string lastName = "mario";
+        //string email = "123123@via.dk";
+        //string password = "veryStrongPasswor22E@d";
+        //ResultBase result = Anonymous.Create();
+        //Anonymous anonymousUser = ((Result<Anonymous>)result).Values;
+
+        //Act
+        //ResultBase resultRegisteredUser = anonymousUser.RegisterUserAccount(email, firstName, lastName, password);
+        
+        //Assert
+        //Assert.IsTrue(!resultRegisteredUser.IsSuccess);
+        //Assert.That(resultRegisteredUser.ErrorMessages[0], Is.EqualTo("First name must be between 2 and 25 characters long and contain only letters."));
     }
     
     [Test]
     public void Register_F4()
     {
         // To add lastname across system
+      
+      
+        //Arrange
+        //string firstName = "bob";
+        //string lastName = ".";
+        //string email = "123123@via.dk";
+        //string password = "veryStrongPasswor22E@d";
+        //ResultBase result = Anonymous.Create();
+        //Anonymous anonymousUser = ((Result<Anonymous>)result).Values;
+
+        //Act
+        //ResultBase resultRegisteredUser = anonymousUser.RegisterUserAccount(email, firstName, lastName, password);
+        
+        //Assert
+        //Assert.IsTrue(!resultRegisteredUser.IsSuccess);
+        //Assert.That(resultRegisteredUser.ErrorMessages[0], Is.EqualTo("Last name must be between 2 and 25 characters long and contain only letters."));
     }
     
     [Test]
@@ -87,13 +118,41 @@ public class Register
     public void Register_F6()
     {
         // To add lastname across system
+      
+        //Arrange
+        //string firstName = "bob9999";
+        //string lastName = "mario";
+        //string email = "123123@via.dk";
+        //string password = "veryStrongPasswor22E@d";
+        //ResultBase result = Anonymous.Create();
+        //Anonymous anonymousUser = ((Result<Anonymous>)result).Values;
+
+        //Act
+        //ResultBase resultRegisteredUser = anonymousUser.RegisterUserAccount(email, firstName, lastName, password);
+        
+        //Assert
+        //Assert.IsTrue(!resultRegisteredUser.IsSuccess);
+        //Assert.That(resultRegisteredUser.ErrorMessages[0], Is.EqualTo("First name must be between 2 and 25 characters long and contain only letters."));
     }
     
     [Test]
     public void Register_F7()
     {
         // To add lastname across system
+
+        //Arrange
+        //string firstName = "$bob$";
+        //string lastName = "mario";
+        //string email = "123123@via.dk";
+        //string password = "veryStrongPasswor22E@d";
+        //ResultBase result = Anonymous.Create();
+        //Anonymous anonymousUser = ((Result<Anonymous>)result).Values;
+
+        //Act
+        //ResultBase resultRegisteredUser = anonymousUser.RegisterUserAccount(email, firstName, lastName, password);
+        
+        //Assert
+        //Assert.IsTrue(!resultRegisteredUser.IsSuccess);
+        //Assert.That(resultRegisteredUser.ErrorMessages[0], Is.EqualTo("First name must be between 2 and 25 characters long and contain only letters."));
     }
-
-
 }

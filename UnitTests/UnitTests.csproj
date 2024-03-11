@@ -26,6 +26,13 @@
 
       <Folder Include="Features\Event\Activate\" />
       <Folder Include="Features\Event\UpdateTimeRange\" />
+
+      <Folder Include="Features\GuestTests\AcceptInvitation\" />
+      <Folder Include="Features\GuestTests\CancelParticipation\" />
+      <Folder Include="Features\GuestTests\DeclineInvitation\" />
+      <Folder Include="Features\GuestTests\InviteGuests\" />
+
+      <Folder Include="Features\GuestTests\Register\" />
     </ItemGroup>
 
     <ItemGroup>
