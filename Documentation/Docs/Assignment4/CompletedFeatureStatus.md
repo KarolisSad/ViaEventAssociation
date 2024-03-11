@@ -79,9 +79,9 @@
   - [x] F2
 
 - [ ] UC10 - Register a Guest Account - Karolis
-  - [ ] S1
-  - [ ] F1
-  - [ ] F2
+  - [x] S1*
+  - [x] F1
+  - [x] F2
   - [ ] F3
   - [ ] F4
   - [ ] F5
@@ -96,23 +96,23 @@
   - [x] F4
   - [x] F5
   
-- [ ] UC12 - Guest Cancels Event Participation - Karolis
+- [x] UC12 - Guest Cancels Event Participation - Karolis
 
-  - [ ] S1
-  - [ ] S2
-  - [ ] F1
+  - [x] S1
+  - [x] S2
+  - [x] F1
 
 - [x] UC13 - Guest is invited to Event - Robert
   - [x] S1
   - [x] F1
   - [x] F2
 
-- [ ] UC14 - Guest accepts Invitation - Karolis
-  - [ ] S1
-  - [ ] F1
-  - [ ] F2
-  - [ ] F3
-  - [ ] F4
+- [x] UC14 - Guest accepts Invitation - Karolis
+  - [x] S1
+  - [x] F1
+  - [x] F2
+  - [x] F3
+  - [x] F4
 
 - [x] UC15 - Guest declines Invitation - Robert
   - [x] S1
