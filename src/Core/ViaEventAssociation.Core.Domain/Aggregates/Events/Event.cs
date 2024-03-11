@@ -385,8 +385,6 @@ public class Event
                 new List<string> { "An event in the past cannot be made ready." }
             );
         }
-        Console.WriteLine(StartTime);
-        Console.WriteLine(DateTime.Now);
 
         if (string.IsNullOrEmpty(Title))
         {
@@ -479,4 +477,106 @@ public class Event
 
         return new ResultBase(errorMessages);
     }
+
+    public ResultBase CancelParticipation(Guest guest)
+    {
+        List<string> errorMessages = new List<string>();
+
+        if (StartTime <= DateTime.Now)
+        {
+            errorMessages.Add("You cannot cancel your participation for past or ongoing events.");
+            return new ResultBase(errorMessages);
+        }
+
+        var invitationToRemove = Invitations.FirstOrDefault(invitation => invitation.Guest.Equals(guest));
+        if (invitationToRemove != null)
+        {
+            Invitations.Remove(invitationToRemove);
+        }
+
+        var requestToRemove = Requests.FirstOrDefault(request => request.Guest.Equals(guest));
+        if (requestToRemove != null)
+        {
+            Requests.Remove(requestToRemove);
+        }
+
+        return new ResultBase(errorMessages);
+    }
+
+   public ResultBase AcceptInvitation(Guest guest)
+{
+    List<string> errorMessages = new List<string>();
+
+    if (Status == EventStatus.Cancelled)
+    {
+        errorMessages.Add("Cancelled events cannot be joined.");
+        return new ResultBase(errorMessages);
+    }
+
+    if (Status == EventStatus.Ready)
+    {
+        errorMessages.Add("The event cannot yet be joined.");
+        return new ResultBase(errorMessages);
+    }
+
+    var invitationToAccept = Invitations.FirstOrDefault(invitation => invitation.Guest.Equals(guest));
+    if (invitationToAccept == null)
+    {
+        errorMessages.Add("Invitation not found.");
+        return new ResultBase(errorMessages);
+    }
+
+    if (Status != EventStatus.Active)
+    {
+        errorMessages.Add("Only active events can be joined.");
+        return new ResultBase(errorMessages);
+    }
+
+    var guestAcceptedInvitations = Invitations.Count(invitation =>
+        invitation.Guest.Equals(guest) && invitation.Status == ParticipationStatus.Accepted
+    );
+
+    var guestAcceptedRequests = Requests.Count(request =>
+        request.Guest.Equals(guest) && request.Status == ParticipationStatus.Accepted
+    );
+
+    if (guestAcceptedInvitations + guestAcceptedRequests > 0)
+    {
+        errorMessages.Add("Guest has already joined the event.");
+        return new ResultBase(errorMessages);
+    }
+
+    if (IsPublic == false)
+    {
+        errorMessages.Add("Only public events can be joined.");
+        return new ResultBase(errorMessages);
+    }
+
+    if (StartTime < DateTime.Now)
+    {
+        errorMessages.Add("Only future events can be participated.");
+        return new ResultBase(errorMessages);
+    }
+
+    var acceptedInvitations = Invitations.Count(invitation =>
+        invitation.Status == ParticipationStatus.Accepted
+    );
+
+    var acceptedRequests = Requests.Count(request =>
+        request.Status == ParticipationStatus.Accepted
+    );
+
+    if (acceptedRequests + acceptedInvitations >= MaximumNumberOfGuests)
+    {
+        errorMessages.Add("The event is full.");
+        return new ResultBase(errorMessages);
+    }
+
+    invitationToAccept.Status = ParticipationStatus.Accepted;
+
+    return new ResultBase();
+}
+
+
+
 }

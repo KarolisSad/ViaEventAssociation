@@ -24,7 +24,7 @@ public class Ready
         validCreatedEvent.UpdateTitle("Great event");
         validCreatedEvent.UpdateDescription("Amazingly great event!");
         DateTime currentTime = DateTime.Now;
-        DateTime startTime = currentTime.AddHours(-1);
+        DateTime startTime = currentTime.AddHours(1);
         DateTime endTime = currentTime.AddHours(2);
         validCreatedEvent.StartTime = startTime;
         validCreatedEvent.EndTime = endTime;
@@ -34,6 +34,12 @@ public class Ready
     [Test]
     public void UpdateDescription_S1()
     {
+        //Arrange
+        DateTime currentTime = DateTime.Now;
+        DateTime startTime = currentTime.AddHours(-1);
+        DateTime endTime = currentTime.AddHours(2);
+        validCreatedEvent.UpdateTimeRange(startTime, endTime);
+        
         //Act
         ResultBase resultBase = validCreatedEvent.MakeEventReady();
 

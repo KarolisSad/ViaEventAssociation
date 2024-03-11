@@ -2,7 +2,7 @@
 
 public class Username
 {
-    public string Value;
+    public string Value { get; }
 
     public Username(string value)
     {
